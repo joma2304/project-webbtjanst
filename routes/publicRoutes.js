@@ -9,7 +9,7 @@ const NonAlcoholic = require('../models/drinks/nonAlcoholic');
 require("dotenv").config();
 
 // GET: Hämta förrätter
-router.get('/starters', async (req, res, next) => {
+router.get('/starters', async (req, res) => {
   try {
     // Hämta förrätter från databasen
     const starters = await Starter.find();
@@ -20,7 +20,7 @@ router.get('/starters', async (req, res, next) => {
 });
 
 // GET: Hämta huvudrätter
-router.get('/maincourse', async (req, res, next) => {
+router.get('/maincourse', async (req, res) => {
   try {
     // Hämta huvudrätter från databasen
     const mainCourse = await MainCourse.find();
@@ -31,7 +31,7 @@ router.get('/maincourse', async (req, res, next) => {
 });
 
 // GET: Hämta efterrätter
-router.get('/dessert', async (req, res, next) => {
+router.get('/dessert', async (req, res) => {
   try {
     // Hämta efterrätter från databasen
     const desserts = await Dessert.find();
@@ -42,7 +42,7 @@ router.get('/dessert', async (req, res, next) => {
 });
 
 // GET: Hämta öl
-router.get('/beer', async (req, res, next) => {
+router.get('/beer', async (req, res) => {
   try {
     // Hämta öl från databasen
     const beers = await Beer.find();
@@ -53,7 +53,7 @@ router.get('/beer', async (req, res, next) => {
 });
 
 // GET: Hämta vin
-router.get('/wine', async (req, res, next) => {
+router.get('/wine', async (req, res) => {
   try {
     // Hämta vin från databasen
     const wines = await Wine.find();
@@ -64,7 +64,7 @@ router.get('/wine', async (req, res, next) => {
 });
 
 // GET: Hämta alkoholfritt
-router.get('/nonalcoholic', async (req, res, next) => {
+router.get('/nonalcoholic', async (req, res) => {
   try {
     // Hämta alkoholfritt från databasen
     const nonAlcoholic = await NonAlcoholic.find();
