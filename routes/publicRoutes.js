@@ -9,7 +9,7 @@ const NonAlcoholic = require('../models/drinks/nonAlcoholic');
 require("dotenv").config();
 
 // GET: Hämta förrätter
-router.get('/starters', async (req, res) => {
+router.get('/starter', async (req, res) => {
   try {
     // Hämta förrätter från databasen
     const starters = await Starter.find();

@@ -38,6 +38,9 @@ function authenticateToken(req, res, next) {
     });
 }
 
+// Exportera authenticateToken-funktionen så att den kan användas i andra filer
+module.exports.authenticateToken = authenticateToken;
+
 
 app.use("/auth", authRoutes);
 app.use("/protected", authenticateToken, protectedRoutes);
