@@ -7,7 +7,7 @@ const bookingSchema = new mongoose.Schema({
         required: true, // Måste finnas
     },
     phoneNumber: {
-        type: Number,
+        type: String,
         required: true, // Måste finnas
     },
     numberOfPeople: {
