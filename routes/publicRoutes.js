@@ -6,7 +6,7 @@ const Dessert = require('../models/menu/dessert');
 const Beer = require('../models/drinks/beer');
 const Wine = require('../models/drinks/wine');
 const NonAlcoholic = require('../models/drinks/nonAlcoholic');
-const Booking = require('')
+const Booking = require('../models/bookings/booking')
 require("dotenv").config();
 
 // GET: Hämta förrätter
