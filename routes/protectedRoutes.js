@@ -8,6 +8,7 @@ const Dessert = require('../models/menu/dessert');
 const Beer = require('../models/drinks/beer');
 const Wine = require('../models/drinks/wine');
 const NonAlcoholic = require('../models/drinks/nonAlcoholic');
+const Booking = require('../models/bookings/booking')
 
 //Förrätter
 //POST: Lägg till förrätt
@@ -202,6 +203,18 @@ router.delete("/nonalcoholic/:id", async (req, res) => {
         return res.status(400).json(error);
     }
 });
+
+//Get: Hämta bokningar
+router.get("/booking", async (req, res) => {
+    try {
+        const bookingList = await Booking.find(); 
+  
+        return res.json(bookingList);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+  
+  });
 
 
 module.exports = router;

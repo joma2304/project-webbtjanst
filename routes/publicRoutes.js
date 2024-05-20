@@ -6,6 +6,7 @@ const Dessert = require('../models/menu/dessert');
 const Beer = require('../models/drinks/beer');
 const Wine = require('../models/drinks/wine');
 const NonAlcoholic = require('../models/drinks/nonAlcoholic');
+const Booking = require('')
 require("dotenv").config();
 
 // GET: Hämta förrätter
@@ -72,6 +73,18 @@ router.get('/nonalcoholic', async (req, res) => {
   } catch (error) {
     return res.status(500).json(error);
   }
+});
+
+//POST: Lägg till bokning
+router.post("/booking", async (req, res) => {
+  try {
+      const bookingList = await Booking.create(req.body); 
+
+      return res.json(bookingList);
+  } catch (error) {
+      return res.status(400).json(error);
+  }
+
 });
 
 module.exports = router;
