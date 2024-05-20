@@ -216,5 +216,15 @@ router.get("/booking", async (req, res) => {
   
   });
 
+  //DELETE: Ta bort bokning
+  router.delete("/booking/:id", async (req, res) => {
+    try {
+        await Booking.findByIdAndDelete(req.params.id);
+        return res.json({ message: "Booking deleted successfully" });
+    } catch (error) {
+        return res.status(400).json(error);
+    }
+});
+
 
 module.exports = router;
