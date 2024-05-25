@@ -1,15 +1,37 @@
-# Webbtjänst för restrurang
-Resturangen ska ha en meny som består av förrätt, huvudrätt, efterrätt, öl, vin samt alkoholfritt. Denna menyn ska de anställda kunna ändra i via ett admingränssnitt. Det som behövs för admingränssnittet är användarnamn och lösenord. Alla respektive delar för även ett id. (Lägger ev till för bordsbokning och recensioner sen). 
+# DT207G Backend-baserad webbutveckling, webbtjänst för projektuppgift
+Detta repo innehåller koden för min lösning av en del av projektuppgiften till kurser dt207G backend-baserad webbutveckling. 
+Koden är till en webbtjänst som används för att hantera data för en restaurangs webbplats.
+ 
+## Databaskoppling
+Webbtjänsten är kopplad till en MongoDB databas där all data lagras. 
 
-## CRUD 
-POST - Lägga till, behövs på förrätt, huvudrätt, efterrätt, öl, vin och alkoholfritt. 
-GET - Läsa ut, behövs på förrätt, huvudrätt, efterrätt, öl, vin och alkoholfritt. 
-PUT - Korrigera, behövs på förrätt, huvudrätt, efterrätt, öl, vin och alkoholfritt. 
-DELETE - Ta bort, behövs på förrätt, huvudrätt, efterrätt, öl, vin och alkoholfritt.
+## Scheman är skapade för:
+* Användare - dessert
+* Bokningar - booking
+* Öl-meny - beer
+* Vin-meny - wine
+* Alkoholfritt-meny - nonalcoholic
+* Förrätter - starter
+* Huvudrätter - maincourse
+* Desserter - dessert
 
-## Admingränssnitt
-Ska endast skapa en användare som alla de anställda ska använda sig av. Skapas som en separat webbplats. 
+## Routes är skapade för 
+- /public för publikt ändamål där vem som helt kan komma åt den data som är lagrad.
+- /auth för att skapa användare samt logga in användare. 
+- /protected skyddad route för hantering av data som endast ska kommas åt av inloggad personal.
 
-## Databas
-Kommer att använda min av MongoDB (Atlas). 
+
+## Användning
+Hur API:et används för olika ändamål:
+Nedan är exempel på hur det kan användas för starter (förrätter)
+
+|Metod  |Ändpunkt     |Beskrivning                                                                           |
+|-------|-------------|--------------------------------------------------------------------------------------|
+|POST    |/protected/starter     |För att lägga till en ny förrätt.                                             |
+|PUT    |/protected/starter/:id |För att ändra en specifik förrätt baserat på dess id.                                    |
+|GET     |/public/starter | För att hämta förrätter.            |
+|DELETE     |/protected/starter/:id | För att ta bort en specifik förrätt baserat på dess id.            |
+
+## Länk till webbtjänst
+Länk till publicerad webbtjänst finns här: [Länk](https://project-webbtjanst.onrender.com/public/starter)
 
